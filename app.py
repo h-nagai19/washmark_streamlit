@@ -77,7 +77,7 @@ if uploaded_file is not None:
         img_base64 = base64.b64encode(img_bytes).decode('utf-8')
 
         # 予測の実行
-        response = requests.post("http://localhost:8000/predict", json={'file': img_base64})
+        response = requests.post("https://wash-mark-api.onrender.com/predict", json={'file': img_base64})
 
         # 予測結果の表示
         result = response.json()["prediction"]
